@@ -1,4 +1,4 @@
-function narcissistic(value: number) {
+function narcissistic(value) {
   const valueToString = value.toString()
   const result = valueToString
     .split("")
@@ -9,6 +9,3 @@ function narcissistic(value: number) {
   }
   return false
 }
-console.log(narcissistic(153))
-console.log(narcissistic(1938))
-console.log(narcissistic(12))
