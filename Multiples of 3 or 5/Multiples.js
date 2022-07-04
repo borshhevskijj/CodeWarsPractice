@@ -10,7 +10,8 @@ function solution(number) {
       ((current % 3 === 0 && current % 5 === 0) ||
       current % 3 === 0 ||
       current % 5 === 0 ||
-      (current < 0 ?? 0)
+      current < 0 ||
+      0
         ? current
         : 0)
   )
