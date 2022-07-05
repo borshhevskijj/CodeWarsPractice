@@ -13,8 +13,11 @@ function solution(number) {
       current < 0 ||
       0
         ? current
-        : 0)
+        : 0),
+    0
   )
 
   return result
 }
+
+solution(50)
