@@ -13,6 +13,3 @@ function moveZeros(arr) {
 
   return [...arrWOzeros, ...zerosArr]
 }
-
-// console.log(moveZeros([1, 2, 3, 4, 0, 0, 5, 0, 6, 7, 8, 9, 10, 0, "a", "b"]))
-console.log(moveZeros([1, 2, 3, 4, 0, 0, 5, 0, 6, 7, 8, 9, 10, 0, "a", "b"]))
