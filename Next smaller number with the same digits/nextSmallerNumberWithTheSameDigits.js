@@ -1,9 +1,6 @@
 function nextSmaller(n) {
-  const splitedNumber = JSON.stringify(n)
-    .split("")
-    .sort()
-    // .map((str) => +str)
-    .join("")
+  // не проходит, доделать
+  const splitedNumber = JSON.stringify(n).split("").sort().join("")
 
   for (let i = n - 1; i >= splitedNumber; i--) {
     if (JSON.stringify(i).split("").sort().join("") === splitedNumber) {
@@ -12,4 +9,4 @@ function nextSmaller(n) {
   }
   return -1
 }
-console.log(nextSmaller(153))
+// console.log(nextSmaller(153))
