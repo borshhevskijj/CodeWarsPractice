@@ -5,4 +5,3 @@ function anagrams(word, words) {
     (wordsArrWord) => sortedString(wordsArrWord) === sortedString(word)
   )
 }
-console.log(anagrams("hello", ["hello", "elloh", "elle", "hell", "olelh"]))
