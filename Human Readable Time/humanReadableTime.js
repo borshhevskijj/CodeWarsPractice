@@ -23,4 +23,3 @@ function humanReadable(seconds) {
 
   return `${hours}:${minutes}:${seconds}`
 }
-console.log(humanReadable(1220))
