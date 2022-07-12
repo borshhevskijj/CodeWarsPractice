@@ -5,4 +5,4 @@ function spinWords(string) {
     .join(" ")
 }
 
-console.log(spinWords("This is another test")) // "This is rehtona test"
+// console.log(spinWords("This is another test")) // "This is rehtona test"

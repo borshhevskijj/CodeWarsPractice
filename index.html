@@ -7,8 +7,47 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>priv</h1>
+    <div id="block1">
+      block1
+      <div id="block2">
+        block2
+        <div id="block3">block3</div>
+      </div>
+    </div>
   </body>
+
+  <style>
+    .active {
+      background-color: yellow;
+    }
+
+    #block1,
+    #block2,
+    #block3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    body {
+      width: 100%;
+      height: 100vh;
+    }
+    #block1 {
+      background-color: red;
+      width: 500px;
+      height: 500px;
+    }
+    #block2 {
+      background-color: green;
+      width: 300px;
+      height: 300px;
+    }
+    #block3 {
+      background-color: blue;
+      width: 100px;
+      height: 100px;
+    }
+  </style>
 
   <script src="./Multiples of 3 or 5/Multiples.js"></script>
   <script src="./Narcissistic Number/narcissisticNumber.js"></script>
@@ -17,6 +56,8 @@
   <script src="./Where my anagrams at/WhereMyAnagramsAt.js"></script>
   <script src="./Next smaller number with the same digits/nextSmallerNumberWithTheSameDigits.js"></script>
   <script src="./Human Readable Time/humanReadableTime.js"></script>
-  <script src="./Snail/Snail.js"></script>
   <script src="./Stop gninnipS My sdroW!/StopGninnipsMySdroW!.js"></script>
+  <script src="./Snail/Snail.js"></script>
+  <script src="./Gap in Primes/Gap in Primes.js"></script>
+  <script src="./Last digit of a large number/LastDigitOfALargeNumber.js"></script>
 </html>
