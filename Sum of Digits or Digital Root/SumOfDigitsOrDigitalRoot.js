@@ -8,4 +8,4 @@ function digital_root(n) {
   }
   return splitedNumber
 }
-console.log(digital_root(456))
+// console.log(digital_root(456))
