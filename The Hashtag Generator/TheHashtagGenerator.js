@@ -9,4 +9,4 @@ function generateHashtag(str) {
   }
   return `#${capitalized}`
 }
-console.log(generateHashtag(" Hello there thanks for trying my Kata"))
+// console.log(generateHashtag(" Hello there thanks for trying my Kata"))

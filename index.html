@@ -48,7 +48,25 @@
       height: 100px;
     }
   </style>
+  <script>
+    const block1 = document.getElementById("block1")
+    const block2 = document.getElementById("block2")
+    const block3 = document.getElementById("block3")
 
+    block1.addEventListener("click", (e) => fn(e))
+    block2.addEventListener("click", (e) => fn(e))
+    block3.addEventListener("click", (e) => fn(e))
+    // block1.addEventListener("click", (e) => console.log(e.target))
+    // block2.addEventListener("click", (e) => console.log(e.target))
+    // block3.addEventListener("click", (e) => console.log(e.target))
+
+    const fn = (e) => {
+      e.stopPropagation()
+      console.log(e.target)
+    }
+
+    // block3.addEventListener("click", (e) => console.log(e.currentTarget))
+  </script>
   <script src="./Multiples of 3 or 5/Multiples.js"></script>
   <script src="./Narcissistic Number/narcissisticNumber.js"></script>
   <script src="./Moving Zeros To The End/movingZeros.js"></script>
@@ -66,4 +84,6 @@
   <script src="./ArrayDiff/Array.diff.js"></script>
   <script src="./Sum of Digits or Digital Root/SumOfDigitsOrDigitalRoot.js"></script>
   <script src="./The Hashtag Generator/TheHashtagGenerator.js"></script>
+  <!-- <script src="./Don't give me five! Really!/"></script> -->
+  <script src="./Counting Duplicates/CountingDuplicates.js"></script>
 </html>
