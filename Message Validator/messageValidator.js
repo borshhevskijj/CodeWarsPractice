@@ -46,11 +46,3 @@ function isAValidMessage(message) {
   }
   return isAValid
 }
-// console.log(isAValidMessage("5code13hellocodewars")) //==> true
-// console.log(isAValidMessage("code4hello5")) //==> false
-const test7 = `
-11BXyfIujkNNPFFhtoqYkWPZldHAoyh
-1816bRfTozpVmhBXilNB`
-console.log(isAValidMessage(test7)) //==>>true
-
-// console.log(isAValidMessage(test7)) //==> false
