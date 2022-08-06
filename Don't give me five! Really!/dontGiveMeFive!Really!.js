@@ -5,20 +5,37 @@ function dontGiveMeFive(start, end) {
       end = end * -1
       ;[start, end] = [end, start]
     }
-    if (start < 0 && end > 0) {
-      return end - start + 1
-    }
     return end - start + 1
   }
 
+  // -5, 10
   let num = createNumber(start, end)
-
   let counter = 0
   let newStart = start
   let newEnd = end
-  // Math.ceil(1234/ 100)*100 (===1300)-округляет сотую часть до целого
+  // if (num < 200) {
+  //   let result = 0
+  //   for (let i = start; i <= end; i++) {
+  //     if (String(i).includes("5")) {
+  //       result++
+  //     }
+  //   }
+  //   return num - result
+  // }
+  // console.log(num)
+
+  if (Math.ceil(start / 100) * 100 === Math.floor(end / 100) * 100) {
+    for (let i = start; i <= end; i++) {
+      if (String(i).includes("5")) {
+        counter++
+      }
+    }
+    return num - counter
+  }
+
   for (let i = start; i <= end; i++) {
     if (String(i).includes("5")) {
+      // console.log(i)
       counter++
     }
     if (i === Math.ceil(start / 100) * 100) {
@@ -26,8 +43,9 @@ function dontGiveMeFive(start, end) {
       break
     }
   }
+  //4304 <= 1000
 
-  for (let i = end; i < newStart || start; i--) {
+  for (let i = end; i > start; i--) {
     if (String(i).includes("5")) {
       counter++
     }
@@ -36,83 +54,133 @@ function dontGiveMeFive(start, end) {
       break
     }
   }
+
   let newNum = createNumber(newStart, newEnd)
-  //#region numbers
+  //#region numberDigits
   const numberDigits = {
+    milliard: {
+      number: 1000000000,
+      result(num) {
+        return Math.trunc(num / 1000000000)
+      },
+      residue(num) {
+        return Math.trunc(num / 1000000000) * 10000000
+      },
+      howManyFives(num) {
+        return Math.trunc(num / 1000000000) * 468559
+      },
+    },
+    TenMillions: {
+      number: 10000000,
+      result(num) {
+        return Math.trunc(num / 10000000)
+      },
+      residue(num) {
+        return Math.trunc(num / 10000000) * 10000000
+      },
+      howManyFives(num) {
+        return Math.trunc(num / 10000000) * 5217031
+      },
+    },
     millions: {
       number: 1000000,
-      result: Math.trunc(newNum / 1000000),
-      howManyFives: 468559,
+      result(num) {
+        return Math.trunc(num / 1000000)
+      },
+      residue(num) {
+        return Math.trunc(num / 1000000) * 1000000
+      },
+      howManyFives(num) {
+        return Math.trunc(num / 1000000) * 468559
+      },
     },
     hundredThousands: {
       number: 100000,
-      result: Math.trunc(newNum / 100000),
-      howManyFives: 40951,
+      result(num) {
+        return Math.trunc(num / 100000)
+      },
+      residue(num) {
+        return Math.trunc(num / 100000) * 100000
+      },
+      howManyFives(num) {
+        return Math.trunc(num / 100000) * 40951
+      },
     },
     tenThousands: {
       number: 10000,
-      result: Math.trunc(newNum / 10000),
-      howManyFives: 3439,
+      result(num) {
+        return Math.trunc(num / 10000)
+      },
+      residue(num) {
+        return Math.trunc(num / 10000) * 10000
+      },
+      howManyFives(num) {
+        return Math.trunc(num / 10000) * 3439
+      },
     },
     thousands: {
       number: 1000,
-      result: Math.trunc(newNum / 1000),
-      howManyFives: 271,
+      // result: Math.trunc(newNum / 1000),
+      result(num) {
+        return Math.trunc(num / 1000)
+      },
+      residue(num) {
+        return Math.trunc(num / 1000) * 1000
+      },
+      howManyFives(num) {
+        return Math.trunc(num / 1000) * 271
+      },
     },
     hundreds: {
       number: 100,
-      result: Math.trunc(newNum / 100),
-      howManyFives: 19,
-    },
-    tens: {
-      number: 10,
-      result: Math.trunc(newNum / 10),
-      howManyFives: 1,
+      result(num) {
+        return Math.trunc(num / 100)
+      },
+      // result: Math.trunc(newNum / 100),
+      residue(num) {
+        return Math.trunc(num / 100) * 100
+      },
+      howManyFives(num) {
+        return Math.trunc(num / 100) * 19
+      },
     },
   }
+
+  // console.log(numberDigits.thousands.residue(newNum))
+  // newNum = newNum / 2
+  // console.log(numberDigits.thousands.residue(newNum))
+
+  // console.log(numberDigits.thousands.residue())
+  // console.log(numberDigits.ten.result)
   //#endregion
-  // console.log(numberDigits.hundreds.result * numberDigits.hundreds.number)
-  console.log(
-    newNum - numberDigits.hundreds.result * numberDigits.hundreds.number
-  )
-  // console.log(newStart, newEnd, newNum)
 
-  if (newEnd - newStart < 100) {
-    const result = []
-    for (let i = newStart; i <= newEnd; i++) {
-      if (String(i).includes("5")) {
-        result.push(i)
-      }
-    }
-    console.log("newStart - newEnd < 100")
-    return result.length + counter
-  }
-  // if (newEnd - newStart > 100) {
-  // }
+  // let res = newNum
+
+  // console.log(numberDigits.hundreds.howManyFives(301))
+
   // console.log(newNum)
-  let qwe = newNum
-  let totalFives = 0
-
   for (let digit in numberDigits) {
-    if (numberDigits[digit].result === 0) {
-      // console.log(numberDigits[digit].result)
-      continue
+    const element = numberDigits[digit]
+
+    if (element.result(newNum) >= 1) {
+      counter = counter + element.howManyFives(newNum)
+      newNum = newNum - element.residue(newNum)
     }
-
-    qwe = numberDigits[digit].result * numberDigits[digit].howManyFives
-
-    totalFives = numberDigits[digit].result * numberDigits[digit].howManyFives
   }
-  console.log(totalFives + counter)
-  // console.log(qwe + counter)
+
+  return num - counter
 }
 
-// console.log(dontGiveMeFive(603, 759)) //34 пятерки
-console.log(dontGiveMeFive(603, 959)) //34 пятерки
-// console.log(dontGiveMeFive(-17, 9)) //==> 24
-// console.log(dontGiveMeFive(1, 9)) //8
-// console.log(dontGiveMeFive(4, 17)) //12  newStart=6 newEnd = 14
-// console.log(dontGiveMeFive(-17, -4)) //12
+console.log(Number.MAX_SAFE_INTEGER > 51841599744277)
+console.log(dontGiveMeFive(-17, 9)) //==> 24
+console.log(dontGiveMeFive(984, 4304)) // 2449
+console.log(dontGiveMeFive(-4045, 2575)) // 4819
+console.log(dontGiveMeFive(-4436, -1429)) // 2194
+
+// console.log(dontGiveMeFive(40076, 215151422963990)) // 49707598394353;
+// console.log(dontGiveMeFive(-206981731, 223575697903165)) // 51841599744277
+// console.log(dontGiveMeFive(-90000000000000, 900000000000000)) //203349266266321
+// console.log(dontGiveMeFive(-249022878360451, -249022878219653)) //79380
 
 //#region
 
@@ -123,32 +191,19 @@ const getArr = (start, end) => {
   }
   return arr
 }
-// console.log(getArr(603, 959))
+
 //#endregion
-// arr(0,10000)
 
 const filter = (arr) => {
   return arr.filter((item) => String(item).includes("5")).length
 }
-// console.log(filter(getArr(603, 959))) // 72
 
-//#region
-// если start(-17) отрицательный то ==>> конвертируем в положительное (17) + 1(один это чило 0) + end(9)
-// зная сколько чисел с цифрой пять в сотне мы можем посчитать сколько чисел с цифрой 5 в остатке
-
-// в одной сотне(100) 18 чисел с цифрой 5
-// в одной 10ке одно число с цифрой 5
-// в одной 5ке одно число с цифрой 5
-
-//в примере dontGiveMeFive(-17, 9) получается 27 цифр из них 24 значения без цифры 5
-// 27 можно разделить на 2 разряда (десятки и единицы) 2-ое десяток и 7 единиц : из них в двух десятках находится по одной в каждой и в единицах одна и того - 3
-
-// чтобы получить десятки числа нужно Math.trunc(number/10)
-// чтобы получить единицы числа нужно   Math.floor((number % 1) * Math.pow(10, n)) где n это сколько чисел взять
-
-//#endregion
-
-// let number = 112.45212155;
-// let n = 5; //точность. Сколько брать чисел после запятой
-// fractional = Math.floor((number % 1) * Math.pow(10, n));
-// console.log(fractional); //45212
+// console.log(filter(getArr(0, 1000000))) // 468559
+// console.log(filter(getArr(0, 10000000))) // 5217031
+// console.log(filter(getArr(0, 1000000000))) // 5217031
+// console.log(filter(getArr(0, 1000000)))
+// console.log(filter(getArr(0, 1000000)))
+// console.log(filter(getArr(0, 1000000)))
+// console.log(filter(getArr(0, 1000000)))
+// console.log(filter(getArr(984, 4304))) // 872
+// console.log(filter(getArr(4, 145)))
