@@ -11,13 +11,12 @@ const createNumber = (start, end) => {
 const numWOfives = (start, end) => {
   const arr = []
   for (let i = start; i <= end; i++) {
-    if (String(i).includes("5")) {
+    if (!String(i).includes("5")) {
       arr.push(i)
     }
   }
   return arr.length
 }
-console.log(numWOfives(-4000, 2500), " -numWOfives")
 
 function dontGiveMeFive(start, end) {
   let num = createNumber(start, end)
@@ -63,6 +62,31 @@ function dontGiveMeFive(start, end) {
   const partsInDigit = (a, b) => Math.trunc(a / b)
 
   const numberDigits = {
+    hundredTrillions: {
+      number: 100000000000000,
+      result(num) {
+        return partsInDigit(num, this.number)
+      },
+      residue(num) {
+        return num - partsInDigit(num, this.number) * this.number
+      },
+      howManyFives(num) {
+        return partsInDigit(num, this.number) * 77123207545039
+      },
+    },
+
+    tenTrillions: {
+      number: 10000000000000,
+      result(num) {
+        return partsInDigit(num, this.number)
+      },
+      residue(num) {
+        return num - partsInDigit(num, this.number) * this.number
+      },
+      howManyFives(num) {
+        return partsInDigit(num, this.number) * 7458134171671
+      },
+    },
     trillion: {
       number: 1000000000000,
       result(num) {
@@ -72,7 +96,19 @@ function dontGiveMeFive(start, end) {
         return num - partsInDigit(num, this.number) * this.number
       },
       howManyFives(num) {
-        return partsInDigit(num, this.number) * 64178347599
+        return partsInDigit(num, this.number) * 717570463519
+      },
+    },
+    hundredMilliards: {
+      number: 100000000000,
+      result(num) {
+        return partsInDigit(num, this.number)
+      },
+      residue(num) {
+        return num - partsInDigit(num, this.number) * this.number
+      },
+      howManyFives(num) {
+        return partsInDigit(num, this.number) * 68618940391
       },
     },
 
@@ -85,7 +121,7 @@ function dontGiveMeFive(start, end) {
         return num - partsInDigit(num, this.number) * this.number
       },
       howManyFives(num) {
-        return partsInDigit(num, this.number) * 6119681640
+        return partsInDigit(num, this.number) * 6513215599
       },
     },
 
@@ -98,10 +134,22 @@ function dontGiveMeFive(start, end) {
         return num - partsInDigit(num, this.number) * this.number
       },
       howManyFives(num) {
-        return partsInDigit(num, this.number) * 56886849
+        return partsInDigit(num, this.number) * 612579511
       },
     },
 
+    hundredMillions: {
+      number: 10000000,
+      result(num) {
+        return partsInDigit(num, this.number)
+      },
+      residue(num) {
+        return num - partsInDigit(num, this.number) * this.number
+      },
+      howManyFives(num) {
+        return partsInDigit(num, this.number) * 56953279
+      },
+    },
     TenMillions: {
       number: 10000000,
       result(num) {
@@ -200,9 +248,6 @@ function dontGiveMeFive(start, end) {
     },
   }
 
-  console.log(newNum, newStart, newEnd, "nn ns ne")
-
-  console.log(counter)
   for (let digit in numberDigits) {
     const element = numberDigits[digit]
     if (element.result(newNum) === 5) {
@@ -220,8 +265,8 @@ function dontGiveMeFive(start, end) {
   return num - counter
 }
 
-console.log(dontGiveMeFive(-4045, 2575), "- dontGiveMeFive, должно быть 4819")
+// console.log(dontGiveMeFive(-4045, 2575), "- dontGiveMeFive, должно быть 4819")
+// console.log(dontGiveMeFive(), "- dontGiveMeFive, должно быть 13850")
 // console.log(dontGiveMeFive(-4436, -1429), "- dontGiveMeFive, должно быть 2194") //==> 2194
-
 // console.log(dontGiveMeFive(984, 4304), "- dontGiveMeFive, должно быть 2449") //==> 2194
 // console.log(dontGiveMeFive(984, 4999), "- dontGiveMeFive, должно быть 2930") //==> 2194
