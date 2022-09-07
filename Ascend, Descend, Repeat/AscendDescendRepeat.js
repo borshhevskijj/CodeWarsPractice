@@ -1,22 +1,3 @@
-// function ascendDescend(length, minimum, maximum) {
-//   const numbers = []
-//   for (let i = minimum; numbers.length <= length - 1; i++) {
-//     numbers.push(i)
-//     if (i === maximum) {
-//       for (let j = i; j >= minimum; j--) {
-//         if (j === maximum) {
-//           continue
-//         }
-//         numbers.push(j)
-//         i--
-//         // debugger
-//       }
-//     }
-//   }
-
-//   return numbers.join("")
-// }
-
 function ascendDescend(length, minimum, maximum) {
   if (maximum < minimum || length === 0) {
     return ""
