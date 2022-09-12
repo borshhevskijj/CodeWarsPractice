@@ -22,4 +22,4 @@ function countPhotos(road) {
   return result
 }
 
-// console.log(countPhotos(">.>..<"), "res = 8")
+// console.log(countPhotos(">.>..<"), "res = 8"
