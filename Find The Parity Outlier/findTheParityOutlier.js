@@ -12,6 +12,6 @@ function findOutlier(integers) {
   return integers.find((num) => Math.abs(num) % 2 === 0);
 }
 
-console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21])); //160
-console.log(findOutlier([2, 4, 0, 100, 4, 11, 2602, 36])); //11
-console.log(findOutlier([2, 6, 8, 10, 3])); //3
+// console.log(findOutlier([160, 3, 1719, 19, 11, 13, -21])); //160
+// console.log(findOutlier([2, 4, 0, 100, 4, 11, 2602, 36])); //11
+// console.log(findOutlier([2, 6, 8, 10, 3])); //3
