@@ -49,21 +49,21 @@
     }
   </style>
   <script>
-    const block1 = document.getElementById("block1")
-    const block2 = document.getElementById("block2")
-    const block3 = document.getElementById("block3")
+    const block1 = document.getElementById("block1");
+    const block2 = document.getElementById("block2");
+    const block3 = document.getElementById("block3");
 
-    block1.addEventListener("click", (e) => fn(e))
-    block2.addEventListener("click", (e) => fn(e))
-    block3.addEventListener("click", (e) => fn(e))
+    block1.addEventListener("click", (e) => fn(e));
+    block2.addEventListener("click", (e) => fn(e));
+    block3.addEventListener("click", (e) => fn(e));
     // block1.addEventListener("click", (e) => console.log(e.target))
     // block2.addEventListener("click", (e) => console.log(e.target))
     // block3.addEventListener("click", (e) => console.log(e.target))
 
     const fn = (e) => {
-      e.stopPropagation()
-      console.log(e.target)
-    }
+      e.stopPropagation();
+      console.log(e.target);
+    };
 
     // console.log("1")
 
@@ -104,4 +104,8 @@
   <script src="./Count the photos!/CountThePhotos.js"></script>
   <script src="./Barista problem/BaristaProblem.js"></script>
   <script src="./Even Fibonacci Sum/evenFibonacciSum.js"></script>
+  <script src="./Vowel Count/vowelCount.js"></script>
+  <script src="./Create Phone Number/createPhoneNumber.js"></script>
+  <script src="./Bit Counting/bitCounting.js"></script>
+  <script src="./Find The Parity Outlier/findTheParityOutlier.js"></script>
 </html>
