@@ -7,13 +7,13 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="block1">
+    <!-- <div id="block1">
       block1
       <div id="block2">
         block2
         <div id="block3">block3</div>
       </div>
-    </div>
+    </div> -->
   </body>
 
   <style>
@@ -49,35 +49,21 @@
     }
   </style>
   <script>
-    const block1 = document.getElementById("block1");
-    const block2 = document.getElementById("block2");
-    const block3 = document.getElementById("block3");
+    // const block1 = document.getElementById("block1");
+    // const block2 = document.getElementById("block2");
+    // const block3 = document.getElementById("block3");
 
-    block1.addEventListener("click", (e) => fn(e));
-    block2.addEventListener("click", (e) => fn(e));
-    block3.addEventListener("click", (e) => fn(e));
+    // block1.addEventListener("click", (e) => fn(e));
+    // block2.addEventListener("click", (e) => fn(e));
+    // block3.addEventListener("click", (e) => fn(e));
     // block1.addEventListener("click", (e) => console.log(e.target))
     // block2.addEventListener("click", (e) => console.log(e.target))
     // block3.addEventListener("click", (e) => console.log(e.target))
 
-    const fn = (e) => {
-      e.stopPropagation();
-      console.log(e.target);
-    };
-
-    // console.log("1")
-
-    // setTimeout(() => {
-    //   console.log("2")
-    // }, 1000)
-
-    // const promise = new Promise((resolve, reject) => {
-    //   console.log("3")
-    //   resolve("4")
-    // }).then((value) => console.log(value))
-    // console.log("5")
-
-    // block3.addEventListener("click", (e) => console.log(e.currentTarget))
+    // const fn = (e) => {
+    //   e.stopPropagation();
+    //   console.log(e.target);
+    // };
   </script>
   <script src="./Multiples of 3 or 5/Multiples.js"></script>
   <script src="./Narcissistic Number/narcissisticNumber.js"></script>
@@ -111,5 +97,6 @@
   <script src="./Duplicate Encoder/duplicateEncoder.js"></script>
   <script src="./Simple Pig Latin/simplePigLatin.js"></script>
   <script src="./Advanced Pig Latin/advancedPigLatin.js"></script>
+  <script src="./Persistent Bugger/persistentBugger.js"></script>
   <!-- <script src="./test/test.js"></script> -->
 </html>
