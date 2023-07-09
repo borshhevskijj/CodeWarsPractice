@@ -9,6 +9,3 @@ function fibonacci(max) {
   }
   return evenNumbersSum;
 }
-
-// console.log(fibonacci(1000));
-// 798
