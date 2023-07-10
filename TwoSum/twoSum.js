@@ -11,5 +11,5 @@ function twoSum(numbers = [], target = 0) {
   return [];
 }
 
-console.log(twoSum([1, 2, 3], 4), "должно быть [0,2] ");
-console.log(twoSum([1234, 5678, 9012], 14690), "должно быть [1,2] ");
+// console.log(twoSum([1, 2, 3], 4), "должно быть [0,2] ");
+// console.log(twoSum([1234, 5678, 9012], 14690), "должно быть [1,2] ");
