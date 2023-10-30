@@ -5,7 +5,7 @@ function isPangram(string = "") {
     const element = string[i];
     if (element.toLowerCase() !== element.toUpperCase()) {
       uniqueChars.add(element);
-      if (uniqueChars === charsInEnglishAlphabet) {
+      if (uniqueChars.size === charsInEnglishAlphabet) {
         return true;
       }
     }
@@ -13,5 +13,3 @@ function isPangram(string = "") {
   return uniqueChars.size >= charsInEnglishAlphabet;
 }
 
-//   console.log(isPangram("The quick brown fox jumps over the lazy dog.")); //true
-//   console.log(isPangram("This is not a pangram.")); //false
