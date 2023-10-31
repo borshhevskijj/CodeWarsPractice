@@ -18,6 +18,4 @@ const list = [
   { firstName: "Abb", lastName: "O.", country: "Israel", continent: "Asia", age: 39, language: "Java" },
 ];
 
-console.log(findOddNames(list));
-
 module.exports = findOddNames;
